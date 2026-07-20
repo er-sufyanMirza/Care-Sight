@@ -1,1 +1,31 @@
 caresight-healthcare-analytics/hcenv/
+
+# Python virtual environment
+.venv/
+
+# Environment variables
+.env
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Raw healthcare data
+data/raw/
+
+# Processed datasets
+data/processed/
+
+# Power BI temporary files
+*.tmp
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+hcenv/
+__pycache__/
+*.pyc
+.env
