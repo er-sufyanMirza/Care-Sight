@@ -5,10 +5,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-FILE_BASE_URL = os.getenv("FILE_BASE_URL")
+FHIR_BASE_URL = os.getenv("FHIR_BASE_URL")
 
-project_root = Path(__file__).resolve().parent.parent
-RAW_DATA = project_root/"data"/"raw"
-PROCDSSED_DATA = project_root/"data"/"processed"
-REFERENCE_DATA = project_root/"data"/"reference"
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+RAW_DATA =      PROJECT_ROOT/"data"/"raw"
+PROCESSED_DATA = PROJECT_ROOT/"data"/"processed"
+REFERENCE_DATA = PROJECT_ROOT/"data"/"reference"
 
