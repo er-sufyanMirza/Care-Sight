@@ -48,17 +48,16 @@ class FHIRClient:
         response.raise_for_status()
         return response.json()
     
-    def fetch_resource(
+    def get_bundle(
         self,
-        resource : str,
-        count : int = 10
-    ):
-        """ fetch one page of the FHIR resource
-        """
+        resource: str,
+        count: int = 100,
+    ) -> dict:
+        """ fetch one bundle page of the fhir resource"""
         
         return self.get(
-            resource,
+            endpoint = resource,
             params = {
-                "_count" : count
-            }
+                "_count": count
+            },
         )
