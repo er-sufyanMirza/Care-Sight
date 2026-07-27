@@ -5,6 +5,7 @@ Responsible for downloading fhir resources
 
 from __future__ import annotations
 from src.fhir.client import FHIRClient
+from utils.file_manager import FileManager
 
 class FHIRDownloader:
     def __init__(
@@ -24,7 +25,25 @@ class FHIRDownloader:
             count = count
         )
         
-        entries = bundle.get("entry", [])
-        print(f"entries: {len(entries)}")
+        timestamp = FileManager.create_timestamp()
+        filename = f"{resource}_{timestamp}.json"
         
-        return entries
+        path = FileManager.save_json(
+            data =  bundle,
+            folder =  resource,
+            filename= filename,
+        )
+        print(f"saved raw bundle ->{path}")
+        
+        entries = bundle.get("entry", [])
+        
+        resources = [
+            entry[resource]
+            for entry in entries
+        ]
+        
+        
+        
+        
+        
+        return resource
