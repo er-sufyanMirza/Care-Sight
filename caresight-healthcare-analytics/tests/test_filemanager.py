@@ -1,4 +1,4 @@
-from utils.file_manager import FileManager
+from src.utils.file_manager import FileManager
 
 sample = {
     "project" : "caresight",
