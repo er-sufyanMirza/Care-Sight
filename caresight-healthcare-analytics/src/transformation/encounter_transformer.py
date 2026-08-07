@@ -53,7 +53,7 @@ class EncounterTransformer(BaseTransformer):
         reference = subject.get("reference")
         
         if reference:
-            return reference.split("/")(-1)
+            return reference.split("/")[-1]
         
         return None
     
@@ -78,7 +78,7 @@ class EncounterTransformer(BaseTransformer):
         reference = provider.get("reference")
         
         if reference:
-            return reference.split("/")(-1)
+            return reference.split("/")[-1]
         return None
     
             
