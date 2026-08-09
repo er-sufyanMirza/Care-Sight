@@ -38,7 +38,7 @@ class EncounterTransformer(BaseTransformer):
                         start,
                         end
                     ),
-                    "observation_id" : self._extract_observation(encounter),
+                    "organization_id": self._extract_organization(encounter),
                 }
             )
             
@@ -52,10 +52,10 @@ class EncounterTransformer(BaseTransformer):
         subject = encounter.get("subject", {})
         reference = subject.get("reference")
         
-        if reference:
-            return reference.split("/")[-1]
+        if reference.startswith("urn:uuid:"):
+            return reference.replace("urn:uuid:", "")
         
-        return None
+        return reference.split("/")[-1]
     
     def _extract_class(
         self,
@@ -69,7 +69,7 @@ class EncounterTransformer(BaseTransformer):
             or encounter_class.get("code")
         )        
         
-    def _extract_observation(
+    def _extract_organization(
         self,
         encounter : dict[str, Any],
     ) -> str | None:
