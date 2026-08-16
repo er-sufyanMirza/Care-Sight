@@ -8,20 +8,26 @@
 -- DIMENSION: PATIENT
 -- ============================================================
 
-CREATE TABLE IF NOT EXISTS dim_patient (
-    patient_id UUID PRIMARY KEY,
-
-    family_name VARCHAR(255),
-    given_name VARCHAR(255),
+CREATE TABLE IF NOT EXISTS dim_patient(
+    patient_id uuid PRIMARY KEY,
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
 
     gender VARCHAR(50),
 
     birth_date DATE,
 
     age INTEGER,
-    age_group VARCHAR(50),
+    age_group VARCHAR,
 
-    phone VARCHAR(50)
+    city VARCHAR(255), 
+    state VARCHAR(100),
+    postal_code VARCHAR(20),
+    phone VARCHAR(50),
+    marital_status VARCHAR(100),
+    race VARCHAR(255)
+    ethnicity VARCHAR(255)
+
 );
 
 

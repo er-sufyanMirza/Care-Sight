@@ -22,7 +22,7 @@ class MedicationTransformer(BaseTransformer):
             
             rows.append(
                 {
-                    "MedicationReruest_id" : medication.get("id"),
+                    "medication_request_id" : medication.get("id"),
                     "patient_id" : self._extract_patient_id(medication),
                     "encounter_id" : self._extract_encounter_id(medication),
                     "code_system" : self._extract_code_system(medication),

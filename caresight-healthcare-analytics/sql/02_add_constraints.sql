@@ -67,3 +67,62 @@ ADD CONSTRAINT fk_medication_encounter
 FOREIGN KEY (encounter_id)
 REFERENCES fact_encounter(encounter_id);
 
+-- ============================================================
+-- INDEXES
+-- ============================================================
+
+-- Patient lookup indexes
+CREATE INDEX idx_encounter_patient
+ON fact_encounter(patient_id);
+
+CREATE INDEX idx_observation_patient
+ON fact_observation(patient_id);
+
+CREATE INDEX idx_condition_patient
+ON fact_condition(patient_id);
+
+CREATE INDEX idx_medication_patient
+ON fact_medication(patient_id);
+
+-- Encounter lookup indexes
+CREATE INDEX idx_observation_encounter
+ON fact_observation(encounter_id);
+
+CREATE INDEX idx_condition_encounter
+ON fact_condition(encounter_id);
+
+CREATE INDEX idx_procedure_encounter
+ON fact_procedure(encounter_id);
+
+CREATE INDEX idx_medication_encounter
+ON fact_medication(encounter_id);
+
+-- Clinical terminology indexes
+CREATE INDEX idx_observation_loinc
+ON fact_observation(loinc_code);
+
+CREATE INDEX idx_condition_code
+ON fact_condition(diagnosis_code);
+
+CREATE INDEX idx_procedure_code
+ON fact_procedure(procedure_code);
+
+CREATE INDEX idx_medication_code
+ON fact_medication(medication_code);
+
+-- Time based analytical indexes
+
+CREATE INDEX idx_encounter_start
+ON fact_encounter(start_datetime);
+
+CREATE INDEX idx_observation_effective
+ON fact_observation(effective_datetime);
+
+CREATE INDEX idx_condition_onset
+ON fact_condition(onset_date);
+
+CREATE INDEX idx_procedure_start
+ON fact_procedure(performed_start);
+
+CREATE INDEX idx_medication_authored
+ON fact_medication(authored_date);

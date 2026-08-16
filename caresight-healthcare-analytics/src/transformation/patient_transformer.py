@@ -23,15 +23,25 @@ class PatientTransformer:
             
             birth_date = patient.get("birthDate")
             age = DateUtils.calculate_age(birth_date)
-            name = patient.get("name", [{}])[0]
+            names = patient.get("name", [])
+            official_name = next((
+                name
+                for name in names
+                if name.get("use") == "official"
+            ), names[0] if names else {},
+            )
+            
+            first_name = " ".join(official_name.get("given", []))
+            last_name = official_name.get("family")
+            
             address = patient.get("address", [{}])[0]
             telecom = patient.get("telecom", [])
             
             rows.append(
                 {
                     "patient_id" : patient.get("id"),
-                    "first_name" : patient.get("name"),
-                    "last_name" : patient.get("family"),
+                    "first_name" : first_name,
+                    "last_name" : last_name,
                     "gender" : patient.get("gender"),
                     "birth_date" : patient.get("birthDate"),
                     "age" : age,
