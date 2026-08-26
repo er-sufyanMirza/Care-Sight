@@ -10,7 +10,7 @@ An end-to-end healthcare data analytics platform that transforms FHIR healthcare
 ![FHIR](https://img.shields.io/badge/Standard-FHIR-00758F)
 
 ---
-
+  
 ## Table of Contents
 
 - [Overview](#overview)
