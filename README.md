@@ -1,4 +1,4 @@
-# CareSight Healthcare Analytics
+ # CareSight Healthcare Analytics
 
 *FHIR → Python ETL → PostgreSQL Data Warehouse → SQL Analytics → Power BI*
 
