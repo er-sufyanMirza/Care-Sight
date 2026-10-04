@@ -2,7 +2,7 @@
 
 *FHIR → Python ETL → PostgreSQL Data Warehouse → SQL Analytics → Power BI*
 
-An end-to-end healthcare data analytics platform that transforms FHIR healthcare resources into a structured PostgreSQL data warehouse and delivers interactive analytics through Power BI.
+An end-to-end healthcare data analytics platform that transforms FHIR healthcare reqsources into a structured PostgreSQL data warehouse and delivers interactive analytics through Power BI.
 
 ![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Data%20Warehouse-4169E1?logo=postgresql&logoColor=white)
